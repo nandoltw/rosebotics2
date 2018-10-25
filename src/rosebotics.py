@@ -109,6 +109,9 @@ class DriveSystem(object):
         # TODO:   from wheel-degrees-spun to robot-inches-moved.
         # TODO:   Assume that the conversion is linear with respect to speed.
 
+
+
+
     def spin_in_place_degrees(self,
                               degrees,
                               duty_cycle_percent=100,
@@ -122,6 +125,12 @@ class DriveSystem(object):
         # TODO: Do a few experiments to determine the constant that converts
         # TODO:   from wheel-degrees-spun to robot-degrees-spun.
         # TODO:   Assume that the conversion is linear with respect to speed.
+
+        while ((self.right_wheel.get_degrees_spun()) < degrees):
+            self.right_wheel.start_spinning(100)
+            self.left_wheel.start_spinning(-100)
+
+
     def turn_degrees(self,
                      degrees,
                      duty_cycle_percent=100,
@@ -133,7 +142,7 @@ class DriveSystem(object):
         stopping by using the given StopAction.
         """
         # TODO: Do a few experiments to determine the constant that converts
-        # TODO:   from wheel-degrees-spun to robot-degrees-turned.
+        # TODO:   from wheel-degrees-spun to robot-degrees-turned.w
         # TODO:   Assume that the conversion is linear with respect to speed.
 
 

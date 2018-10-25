@@ -10,5 +10,7 @@ import time
 def main():
     """ Runs YOUR specific part of the project """
 
+    robot2 = rb.DriveSystem()
+    robot2.spin_in_place_degrees(50)
 
 main()
