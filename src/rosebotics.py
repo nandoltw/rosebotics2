@@ -108,6 +108,10 @@ class DriveSystem(object):
         # TODO: Do a few experiments to determine the constant that converts
         # TODO:   from wheel-degrees-spun to robot-inches-moved.
         # TODO:   Assume that the conversion is linear with respect to speed.
+        self.start_moving(left_wheel_duty_cycle_percent=duty_cycle_percent,
+                          right_wheel_duty_cycle_percent=duty_cycle_percent
+
+    )
 
     def spin_in_place_degrees(self,
                               degrees,
@@ -204,6 +208,7 @@ class ColorSensor(rb.ColorSensor):
         be between 0 (no light reflected) and 100 (maximum light reflected).
         """
         # TODO.
+
 
     def wait_until_intensity_is_greater_than(self, reflected_light_intensity):
         """
